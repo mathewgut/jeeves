@@ -1,0 +1,10 @@
+#from llama_cpp import Llama
+#llm = Llama(model_path=)
+import time
+from ctransformers import AutoModelForCausalLM
+starttime = time.monotonic()
+llm = AutoModelForCausalLM.from_pretrained('llama-2-7b-chat.ggmlv3.q4_1.bin', model_type='llama')
+print(time.time())
+time.sleep(5.0 - ((time.monotonic() - starttime) % 5.0))
+print(time.time())
+print(llm("Who was president of the United States in 1844?"))
