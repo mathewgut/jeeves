@@ -7,7 +7,6 @@ llama2_7b_chat_uncensored.ggmlv3.q4_1(1).bin
 llama-2-13b-guanaco-qlora.ggmlv3.q2_K.bin
 llama-2-13b-chat.ggmlv3.q2_K.bin
 llama-2-7b-chat.ggmlv3.q4_1.bin
-.cache-itszraven
 .cache
 uncensored_quick_llama2.bin
 .cache
@@ -15,4 +14,3 @@ passwords.cpython-311.pyc
 music.cpython-311.pyc
 spotipy.txt
 __pycache__
-.gitignore
