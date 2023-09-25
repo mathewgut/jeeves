@@ -329,7 +329,7 @@ class Bot(commands.Bot):
         #bot.command_in_progress = True
         current = song_current()
         print(current)
-        print("balls")
+        print("test")
         try:
             await ctx.send(f"{current}")
         
