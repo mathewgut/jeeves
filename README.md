@@ -7,8 +7,6 @@ A couple things to note:
 3. <b>I only take credit for mashing these libraries and functions together.</b> While I did create most of the seen functions, I used a lot of resources and tools to accomplish the creation of the music commands and the Twitch integration. The example code found in the Getting Started section of TwitchIO docs will allow you to get an understanding of how easy it is to actually throw stuff to the bot to say.
 4. <b>The models used for my purposes are not provided in the repository.</b> I simply dont have the resources to pay for the LFS storage needed to host the models used for this project and others. So I will provide a suggested model list below as well as the pros and cons. 
 5. <b>Platforms and tools for model inference and performance may very.</b> The code is currently using ctransformers as it is extremley simple to use and allows for models to be pulled from huggingface (so you dont have to manually configure and download a bajillion .bins). However, it does have its limits. I suggest leaving it as is unless youre familiar with data science/machine learning concepts. If you are going to use a model outside of llama please ensure to change the model config/model type as it may not work other wise. 
-6. Enjoy! I used so much code from others to make my little bot work that its only fair if I show the code needed to integrate it all. Feel free to clone and tamper and if you have any issues or suugestions with the code (at its latest update) then please open an issue or reach out to me.
-
    Thanks for checking out my project :)
 
 Models used (mainly from https://github.com/TheBloke an awesome opensource ai dev)<br>
