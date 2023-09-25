@@ -12,7 +12,7 @@ starttime = time.monotonic()
 flan = pipeline("text2text-generation",
             model="google/flan-t5-large")
 t_model = pipeline("text2text-generation",
-            model="Salesforce/codet5-base-codexglue-translate-java-cs")
+            model="google/flan-t5-large")
 
 
 
@@ -191,7 +191,7 @@ class Bot(commands.Bot):
     @commands.command()
     async def ask7(self, ctx: commands.Context):
         bot.command_in_progress = True
-        llm = AutoModelForCausalLM.from_pretrained('llama-2-13b-chat.ggmlv3.q2_K.bin', model_type='llama', max_new_tokens=self.tokens, stop=['jeeves', 'instruction'], temperature=self.temp, gpu_layers=16)
+        llm = AutoModelForCausalLM.from_pretrained('llama-2-13b-chat.ggmlv3.q2_K.bin', model_type='llama', max_new_tokens=self.tokens, stop=['jeeves', 'instruction'], temperature=self.temp, gpu_layers=0)
         message = ctx.message.content.split(' ', 1)[1]
         message = str(message)
         await ctx.send(f'{ctx.author.name} Asking Jeeves... Prompt: ({message}) ')
@@ -219,13 +219,13 @@ class Bot(commands.Bot):
                 print("end")
             else:
                 await ctx.send(f"@{ctx.author.name}, {response}, 1/1")
-            if ctx.author.name == 'itszraven':
+            if ctx.author.name == {author}:
                 pass
             else:
                 await asyncio.sleep(self.cooldown)
 
         except Exception as e:
-            await ctx.send(f"My bad! I had an issue generating your prompt @{ctx.author.name}. Error: {e}. This is most likely an error on ItszRavens part (hes dumb), sorry!")
+            await ctx.send(f"My bad! I had an issue generating your prompt @{ctx.author.name}. Error: {e}. This is most likely an error on {author}s part (hes dumb), sorry!")
         bot.command_in_progress = False
 
     @commands.command()
@@ -312,12 +312,12 @@ class Bot(commands.Bot):
                 await ctx.send(f"@{ctx.author.name}, {response}, 1/1")
 
         except Exception as e:
-            await ctx.send(f"My bad! I had an issue generating your prompt @{ctx.author.name}. Error: {e}. This is most likely an error on ItszRavens part (hes dumb), sorry!")
+            await ctx.send(f"My bad! I had an issue generating your prompt @{ctx.author.name}. Error: {e}. This is most likely an error on {author}s part (hes dumb), sorry!")
 
     @commands.command()
     async def music(self, ctx: commands.Context):
         #bot.command_in_progress = True
-        await ctx.send(f"{ctx.author.name} here are ItszRaven's current favourites:")
+        await ctx.send(f"{ctx.author.name} here are {author}'s current favourites:")
         try:
             await ctx.send(f"{liked()}")
             #await asyncio.sleep(self.cooldown)
